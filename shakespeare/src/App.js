@@ -6,18 +6,23 @@ import axios from 'axios';
 import './App.css';
 var keys = require("./keys.js")
 class App extends React.Component {
-  state = {
-    reviewContent: [],
-    avg: 0,
-    total: 0,
-    loading: true,
-    error: null,
-    errorId: null
+  constructor() {
+    super();
+    this.state = {
+      reviewContent: [],
+      avg: 0,
+      total: 0,
+      loading: true,
+      error: null,
+      errorId: null,
+    }
   }
 
   componentDidMount() {
     const reviewContent = [];
     let avg = 0;
+    let avgArr = [];
+
     let total = 0;
     axios.get(`http://shakespeare.podium.co/api/reviews/`, {
       headers: {
@@ -27,7 +32,11 @@ class App extends React.Component {
       .then(res => {
 
         const reviewId = res.data.data.map(obj => obj.id);
-        console.log(reviewId)
+        console.log("call 1:" + reviewId)
+        avgArr = res.data.data.map(obj => obj.rating)
+        avg = (avgArr.reduce( (prev, curr) => prev + curr ))/avgArr.length;
+        total = avgArr.length;
+        console.log('avgArr:' + avgArr)
         for (var i = 0; i < reviewId.length; i++) {
           axios.get(`http://shakespeare.podium.co/api/reviews/${reviewId[i]}`, {
             headers: {
@@ -35,10 +44,8 @@ class App extends React.Component {
             }
           }).then(res => {
             reviewContent.push(res.data.data)
-            avg += res.data.data.rating/i;
-            total = i;
-console.log(`average is ${avg/i} out of 5 for ${i} reviews`)
             this.setState({avg, total, loading: false, error: null});
+      console.log(reviewContent)
           }).catch(err => {
             // Something is wrong with review ID call. Save the error in state and re-render.
             this.setState({loading: false, errorId: err});
@@ -82,6 +89,8 @@ console.log(`average is ${avg/i} out of 5 for ${i} reviews`)
       </div>
     );
   }
+
+  
 
   render() {
     const {loading} = this.state;

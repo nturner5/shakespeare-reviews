@@ -4,7 +4,7 @@ class Head extends Component {
     render() {
         return (
             <div>
-                <h1 className="head-title">Shakespeare</h1>
+                <h1 className="head-title">Shakespeare Reviews</h1>
                 <h2></h2>
                 <div className="head-calc">
                     <h1 className="head-avg">{Math.round(this.props.avg * 10)/10}</h1>
