@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
+var moment = require('moment')
 
 class ReviewBody extends Component {
     render() {
+var formatted = moment(this.props.review.publish_date).add(364, 'day').format('LL')
         return (
-            <ul>
+            <ul className='body-main'>
                 {this.props.review.map(review => <div key={review.id}>
                     <span className="score">{review.author}</span>
                     {review.rating}
-                    {review.publish_date}
+                    {formatted}
                     {review.body}
                 </div>)}
             </ul>

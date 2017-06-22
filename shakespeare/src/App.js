@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Head from './components/Head.js';
 import ReviewBody from './components/ReviewBody.js';
 import PropTypes from 'prop-types';
@@ -8,6 +8,7 @@ var keys = require("./keys.js")
 class App extends React.Component {
   state = {
     reviewContent: [],
+    avg: 0,
     loading: true,
     error: null,
     errorId: null
@@ -15,12 +16,14 @@ class App extends React.Component {
 
   componentDidMount() {
     const reviewContent = [];
+    let avg = 0;
     axios.get(`http://shakespeare.podium.co/api/reviews/`, {
       headers: {
         "authorization": keys.shakespeareKey
       }
     })
       .then(res => {
+
         const reviewId = res.data.data.map(obj => obj.id);
         console.log(reviewId)
         for (var i = 0; i < reviewId.length; i++) {
@@ -30,19 +33,20 @@ class App extends React.Component {
             }
           }).then(res => {
             reviewContent.push(res.data.data)
-            this.setState({loading: false, error: null});
+            avg += res.data.data.rating/i
+console.log(`average is ${avg/i} out of 5 for ${i} reviews`)
+            this.setState({avg, loading: false, error: null});
           }).catch(err => {
             // Something is wrong with review ID call. Save the error in state and re-render.
             this.setState({loading: false, errorId: err});
           });
         }
-        this.setState({reviewContent, loading: false, error: null});
+        this.setState({reviewContent, avg, loading: false, error: null});
       })
       .catch(err => {
         // Something is wrong with review index API call. Save the error in state and re-render.
         this.setState({loading: false, error: err});
       });
-
   }
 
   renderLoading() {
@@ -58,14 +62,20 @@ class App extends React.Component {
   }
 
   renderPosts() {
-    const {error, reviewContent} = this.state;
+    const {error, reviewContent, avg} = this.state;
     if (error) {
       return this.renderError();
     }
     return (
-      <div>
-        <Head review={reviewContent}/>
-        <ReviewBody review={reviewContent}/>
+      // <div>
+      //   <Head avg={avg}/>
+      //   <ReviewBody review={reviewContent}/>
+      // </div>
+      <div className="bg-main">
+        <div className="content">
+          <Head avg={avg}/>
+         <ReviewBody review={reviewContent}/>
+        </div>
       </div>
     );
   }
