@@ -5,6 +5,8 @@ h1 {
   margin-top: 0px;
   margin-bottom: 0px;
   padding-top: 0px;
+  font-size: 13px;
+  line-height: 20px;
 }
 
 .bg-main {
@@ -25,7 +27,6 @@ h1 {
   position: relative;
   box-sizing: border-box;
   padding: 40px 50px;
-  font-size: 13px;
   margin-top: 4%;
 }
 
@@ -34,91 +35,98 @@ h1 {
   font-size: 28px;
 }
 
-.head-avg {
+.head-calc {
   display: flex;
   padding: 0px;
 }
 
-.head-avg h1 {
+.head-avg {
   color: #FFB400;
   font-size: 32px;
   font-weight: 200;
   padding: 0px;
-  margin-top: -3px;
+  margin-top: 6px;
   margin-right: 10px;
+}
+.head-total{
+  color: #878787;
+  font-size: 15px;
+  font-weight: 100;
+  margin-left: 12px;
+  margin-top: 11px;
+
 }
 
 
-
 .head-stars__0 {
-  background-position: -100px -391px;
+  background-position: -100px -388px;
   width: 96px;
   height: 29px;
   background-image: url("./randomIcons.png");
 }
 .head-stars__0h {
-  background-position: 119px -391px;
+  background-position: 119px -388px;
   width: 96px;
   height: 29px;
   background-image: url("./randomIcons.png");
 }
 .head-stars__1 {
-  background-position: -81px -391px;
+  background-position: -81px -388px;
   width: 96px;
   height: 29px;
   background-image: url("./randomIcons.png");
 }
 .head-stars__1h {
-  background-position: 138px -391px;
+  background-position: 138px -388px;
   width: 96px;
   height: 29px;
   background-image: url("./randomIcons.png");
 }
 
 .head-stars__2 {
-  background-position: -62px -391px;
+  background-position: -62px -388px;
   width: 96px;
   height: 29px;
   background-image: url("./randomIcons.png");
 }
 .head-stars__2h {
-  background-position: 158px -391px;
+  background-position: 158px -388px;
   width: 96px;
   height: 29px;
   background-image: url("./randomIcons.png");
 }
 .head-stars__3 {
-  background-position: -43px -391px;
+  background-position: -43px -388px;
   width: 96px;
   height: 29px;
   background-image: url("./randomIcons.png");
 }
 .head-stars__3h {
-  background-position: 177px -391px;
+  background-position: 177px -388px;
   width: 96px;
   height: 29px;
   background-image: url("./randomIcons.png");
 }
 .head-stars__4 {
-  background-position: -24px -391px;
+  background-position: -24px -388px;
   width: 96px;
   height: 29px;
   background-image: url("./randomIcons.png");
 }
 .head-stars__4h {
-  background-position: 196px -391px;
+  background-position: 196px -388px;
   width: 96px;
   height: 29px;
   background-image: url("./randomIcons.png");
 }
 .head-stars__5 {
-  background-position: 0px -391px;
+  background-position: 0px -388px;
   width: 96px;
   height: 29px;
   background-image: url("./randomIcons.png");
 }
 .head-stars__5h {
-  background-position: 0px -391px;
+  background-position: 0px -388px;
   width: 96px;
   height: 29px;
   background-image: url("./randomIcons.png");
@@ -128,20 +136,39 @@ h1 {
   background-position: -2px -500px;
 }
 
-.body-main{
+.review-body{
   overflow-y: scroll;
   height: 77%;
 }
+.review-body__topBorder{
+  border-top: .5px solid #d5d5d5;
+  padding-top: 20px;
 
- .body-main::-webkit-scrollbar {
+}
+/*.review-body__review{
+  display: flex;
+}*/
+.review-body__name{
+  font-weight: bold;
+
+}
+.review-body__date{
+  font-weight: normal;
+  color: #999999;
+}
+.review-body__body{
+
+}
+
+ .review-body::-webkit-scrollbar {
       width:9px;
-      height: 40px;
+    
 
 
     }
-    .body-main::-webkit-scrollbar * {
+    .review-body::-webkit-scrollbar * {
       background:transparent;
     }
-    .body-main::-webkit-scrollbar-thumb {
+    .review-body::-webkit-scrollbar-thumb {
       background:#CBDBCE !important;
     }

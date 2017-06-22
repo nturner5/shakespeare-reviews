@@ -9,6 +9,7 @@ class App extends React.Component {
   state = {
     reviewContent: [],
     avg: 0,
+    total: 0,
     loading: true,
     error: null,
     errorId: null
@@ -17,6 +18,7 @@ class App extends React.Component {
   componentDidMount() {
     const reviewContent = [];
     let avg = 0;
+    let total = 0;
     axios.get(`http://shakespeare.podium.co/api/reviews/`, {
       headers: {
         "authorization": keys.shakespeareKey
@@ -33,9 +35,10 @@ class App extends React.Component {
             }
           }).then(res => {
             reviewContent.push(res.data.data)
-            avg += res.data.data.rating/i
+            avg += res.data.data.rating/i;
+            total = i;
 console.log(`average is ${avg/i} out of 5 for ${i} reviews`)
-            this.setState({avg, loading: false, error: null});
+            this.setState({avg, total, loading: false, error: null});
           }).catch(err => {
             // Something is wrong with review ID call. Save the error in state and re-render.
             this.setState({loading: false, errorId: err});
@@ -62,7 +65,7 @@ console.log(`average is ${avg/i} out of 5 for ${i} reviews`)
   }
 
   renderPosts() {
-    const {error, reviewContent, avg} = this.state;
+    const {error, reviewContent, avg, total} = this.state;
     if (error) {
       return this.renderError();
     }
@@ -73,7 +76,7 @@ console.log(`average is ${avg/i} out of 5 for ${i} reviews`)
       // </div>
       <div className="bg-main">
         <div className="content">
-          <Head avg={avg}/>
+          <Head avg={avg} total={total}/>
          <ReviewBody review={reviewContent}/>
         </div>
       </div>
