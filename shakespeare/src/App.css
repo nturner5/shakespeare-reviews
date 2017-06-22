@@ -236,6 +236,14 @@ height: 14px;
   margin-bottom: 0px;
   margin-top: 3px;
 }
+.review-body__Btn{
+  display: flex;
+}
+.review-body__thumbInt{
+  color: #999999;
+  margin-top: 6px;
+  margin-left: 6px;
+}
 
 .review-body::-webkit-scrollbar {
   width: 9px;
@@ -258,7 +266,7 @@ height: 14px;
     padding: 0;
      display: inline-block;
     fill: currentColor;
-     /*height: 24px; */
+     height: 27px; 
     line-height: 24px;
     /* position: relative; */
      width: 18px; 
