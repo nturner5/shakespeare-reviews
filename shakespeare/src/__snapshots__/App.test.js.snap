@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> App renders correctly 1`] = `
+<div>
+  <div>
+    Loading Reviews...
+  </div>
+</div>
+`;
+
+exports[`<Head /> Head renders correctly 1`] = `
+<div>
+  <h1
+    className="head-title"
+  >
+    Shakespeare Reviews
+  </h1>
+  <h2 />
+  <div
+    className="head-calc"
+  >
+    <h1
+      className="head-avg"
+    >
+      NaN
+    </h1>
+    <div
+      className="head-stars__NaNh"
+    />
+    <h1
+      className="head-total"
+    >
+      undefined reviews
+    </h1>
+  </div>
+</div>
+`;
+
+exports[`snapshot of App Component 1`] = `
+<div>
+  <div>
+    Loading Reviews...
+  </div>
+</div>
+`;

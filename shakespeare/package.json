@@ -4,15 +4,21 @@
   "private": true,
   "dependencies": {
     "axios": "^0.16.2",
+    "enzyme": "^2.9.0",
     "moment": "^2.18.1",
     "normalize.css": "^7.0.0",
     "react": "^15.6.1",
+    "react-addons-test-utils": "^15.6.0",
     "react-dom": "^15.6.1"
   },
   "devDependencies": {
-    "react-scripts": "1.0.7"
+    "jest-cli": "^20.0.4",
+    "react-scripts": "1.0.7",
+    "react-snapshot-test-generator": "^1.1.0",
+    "react-test-renderer": "^15.6.1"
   },
   "scripts": {
+    "generateTests": "react-snapshot-test-generator",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
