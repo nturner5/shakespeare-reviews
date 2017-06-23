@@ -4,7 +4,7 @@ import ReviewBody from './components/ReviewBody.js';
 import axios from 'axios';
 import './styles/App.css';
 // module.exports = times;
-var keys = require("./keys.js")
+var keys = require("./config.js")
 
 
 class App extends React.Component {
@@ -35,14 +35,13 @@ class App extends React.Component {
           .data
           .data
           .map(obj => obj.id);
-        console.log("call 1:" + reviewId)
         avgArr = res
           .data
           .data
           .map(obj => obj.rating)
         avg = (avgArr.reduce((prev, curr) => prev + curr)) / avgArr.length;
         total = avgArr.length;
-        console.log('avgArr:' + avgArr)
+        reviewId.map
         for (var i = 0; i < reviewId.length; i++) {
           axios.get(`http://shakespeare.podium.co/api/reviews/${reviewId[i]}`, {
             headers: {
@@ -51,7 +50,6 @@ class App extends React.Component {
           }).then(res => {
             reviewContent.push(res.data.data)
             this.setState({avg, total, loading: false, error: null});
-            console.log(reviewContent)
           }).catch(err => {
             // Something is wrong with review ID call. Save the error in state and
             // re-render.
