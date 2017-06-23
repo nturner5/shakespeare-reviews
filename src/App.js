@@ -3,7 +3,7 @@ import Head from './components/Head.js';
 import ReviewBody from './components/ReviewBody.js';
 import axios from 'axios';
 import './styles/App.css';
-var keys = require("./config.js")
+var keys = require("./keys.js")
 
 class App extends React.Component {
   constructor(props) {
