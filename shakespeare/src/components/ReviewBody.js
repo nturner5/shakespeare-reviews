@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import '../styles/ReviewBody.css';
+
 var moment = require('moment')
 
 class ReviewBody extends Component {

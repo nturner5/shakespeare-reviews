@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import Head from './components/Head'
+import ReviewBody from './components/ReviewBody'
 import { mount, shallow } from 'enzyme';
 import renderer from 'react-test-renderer'
 
@@ -9,12 +11,6 @@ function snapshotTest(element) {
   const tree = renderer.create(element).toJSON()
   expect(tree).toMatchSnapshot()
 }
-
-// jest.mock('TextInput', () => 'TextInput')
-
-import Head from './components/Head'
-import ReviewBody from './components/ReviewBody'
-
 
 describe(`<App />`, () => {
   it('App renders correctly', () => {
@@ -34,13 +30,10 @@ describe(`<Head />`, () => {
 //   })
 // })
 
-
-
 it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<App />, div);
 });
-
 
 describe('<App />', () => {
   it('renders <App /> component', () => {
@@ -59,7 +52,6 @@ it('reviewContent starts as an empty array', () =>{
   const component = mount(<App />)
   expect(component.state().reviewContent).toEqual([]) 
 })
-
 });
 
 it('snapshot of App Component', () => {

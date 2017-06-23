@@ -1,0 +1,88 @@
+.head-title {
+  font-weight: normal;
+  font-size: 28px; }
+
+.head-calc {
+  display: flex;
+  padding: 15px; }
+
+.head-avg {
+  color: #FFB400;
+  font-size: 32px;
+  font-weight: 200;
+  padding: 0px;
+  margin-top: 6px;
+  margin-right: 10px; }
+
+.head-total {
+  color: #878787;
+  font-size: 15px;
+  font-weight: 100;
+  margin-left: 12px;
+  margin-top: 11px; }
+
+.head-stars__0 {
+  background-position: -100px -388px;
+  width: 96px;
+  height: 29px;
+  background-image: url("../images/randomIcons.png"); }
+
+.head-stars__0h {
+  background-position: 119px -388px;
+  width: 96px;
+  height: 29px;
+  background-image: url("../images/randomIcons.png"); }
+
+.head-stars__1 {
+  background-position: -81px -388px;
+  width: 96px;
+  height: 29px;
+  background-image: url("../images/randomIcons.png"); }
+
+.head-stars__1h {
+  background-position: 138px -388px;
+  width: 96px;
+  height: 29px;
+  background-image: url("../images/randomIcons.png"); }
+
+.head-stars__2 {
+  background-position: -62px -388px;
+  width: 96px;
+  height: 29px;
+  background-image: url("../images/randomIcons.png"); }
+
+.head-stars__2h {
+  background-position: 158px -388px;
+  width: 96px;
+  height: 29px;
+  background-image: url("../images/randomIcons.png"); }
+
+.head-stars__3 {
+  background-position: -43px -388px;
+  width: 96px;
+  height: 29px;
+  background-image: url("../images/randomIcons.png"); }
+
+.head-stars__3h {
+  background-position: 177px -388px;
+  width: 96px;
+  height: 29px;
+  background-image: url("../images/randomIcons.png"); }
+
+.head-stars__4 {
+  background-position: -24px -388px;
+  width: 96px;
+  height: 29px;
+  background-image: url("../images/randomIcons.png"); }
+
+.head-stars__4h {
+  background-position: 196px -388px;
+  width: 96px;
+  height: 29px;
+  background-image: url("../images/randomIcons.png"); }
+
+.head-stars__5 {
+  background-position: 0px -388px;
+  width: 96px;
+  height: 29px;
+  background-image: url("../images/randomIcons.png"); }

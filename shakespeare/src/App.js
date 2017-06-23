@@ -1,9 +1,8 @@
 import React from 'react';
 import Head from './components/Head.js';
 import ReviewBody from './components/ReviewBody.js';
-import PropTypes from 'prop-types';
 import axios from 'axios';
-import './App.css';
+import './styles/App.css';
 // module.exports = times;
 var keys = require("./keys.js")
 

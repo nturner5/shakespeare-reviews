@@ -1,0 +1,34 @@
+body,
+html,
+h1,
+button {
+  font-family: arial, sans-serif;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  font-size: 13px;
+  line-height: 20px;
+  background: transparent;
+  border: none;
+}
+
+.bg-main {
+  width: 100%;
+  height: 100vh;
+  background-color: #F6F6F6;
+  position: fixed;
+}
+
+.content {
+  background-color: #fff;
+  border: 1px solid #d5d5d5;
+  box-shadow: 0 2px 4px #d5d5d5;
+  height: 85%;
+  width: 780px;
+  /*overflow: hidden scroll;*/
+  margin: auto;
+  position: relative;
+  box-sizing: border-box;
+  padding: 40px 50px;
+  margin-top: 4%;
+}
