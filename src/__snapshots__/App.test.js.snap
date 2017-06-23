@@ -15,7 +15,6 @@ exports[`<Head /> Head renders correctly 1`] = `
   >
     Shakespeare Reviews
   </h1>
-  <h2 />
   <div
     className="head-calc"
   >

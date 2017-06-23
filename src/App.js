@@ -3,9 +3,7 @@ import Head from './components/Head.js';
 import ReviewBody from './components/ReviewBody.js';
 import axios from 'axios';
 import './styles/App.css';
-// module.exports = times;
 var keys = require("./config.js")
-
 
 class App extends React.Component {
   constructor(props) {
@@ -24,6 +22,7 @@ class App extends React.Component {
     let avg = 0;
     let avgArr = [];
     let total = 0;
+    // Calling to API get the index numbers to map onto reviewID
     axios
       .get(`http://shakespeare.podium.co/api/reviews/`, {
       headers: {
@@ -41,21 +40,28 @@ class App extends React.Component {
           .map(obj => obj.rating)
         avg = (avgArr.reduce((prev, curr) => prev + curr)) / avgArr.length;
         total = avgArr.length;
-        reviewId.map
-        for (var i = 0; i < reviewId.length; i++) {
-          axios.get(`http://shakespeare.podium.co/api/reviews/${reviewId[i]}`, {
+        reviewId.map((i) => {
+          // mapping over axios call to API with unique id in each call
+          axios
+            .get(`http://shakespeare.podium.co/api/reviews/${i}`, {
             headers: {
               "authorization": keys.shakespeareKey
             }
-          }).then(res => {
-            reviewContent.push(res.data.data)
-            this.setState({avg, total, loading: false, error: null});
-          }).catch(err => {
-            // Something is wrong with review ID call. Save the error in state and
-            // re-render.
-            this.setState({loading: false, errorId: err});
-          });
-        }
+          })
+            .then(res => {
+              console.log(i)
+              console.log('reached then')
+              console.log(res.data.data)
+              reviewContent.push(res.data.data)
+              this.setState({avg, total, loading: false, error: null});
+              console.log(reviewContent + ' reviewContent')
+            })
+            .catch(err => {
+              // Something is wrong with review ID call. Save the error in state and
+              // re-render 
+              this.setState({loading: false, errorId: err});
+            });
+        })
         this.setState({reviewContent, avg, loading: false, error: null});
       })
       .catch(err => {
