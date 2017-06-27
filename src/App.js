@@ -49,12 +49,8 @@ class App extends React.Component {
             }
           })
             .then(res => {
-              console.log(i)
-              console.log('reached then')
-              console.log(res.data.data)
               reviewContent.push(res.data.data)
               this.setState({avg, total, loading: false, error: null});
-              console.log(reviewContent + ' reviewContent')
             })
             .catch(err => {
               // Something is wrong with review ID call. Save the error in state and
@@ -106,4 +102,5 @@ class App extends React.Component {
     );
   }
 }
+
 export default App;
