@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-
 import '../styles/Head.css';
+var PropTypes = require('prop-types')
+
 
 class Head extends Component {
     render() {
@@ -19,6 +20,11 @@ class Head extends Component {
             </div>
         );
     }
+}
+
+Head.propTypes = {
+    avg: PropTypes.number.isRequired,
+    total: PropTypes.number.isRequired
 }
 
 export default Head;

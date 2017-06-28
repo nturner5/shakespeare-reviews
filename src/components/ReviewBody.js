@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import '../styles/ReviewBody.css';
+import PropTypes from 'prop-types';
+
 
 var moment = require('moment')
 
@@ -53,6 +55,10 @@ class ReviewBody extends Component {
             </ul>
         );
     }
+}
+
+ReviewBody.propTypes = {
+    review: PropTypes.array.isRequired,
 }
 
 export default ReviewBody;
